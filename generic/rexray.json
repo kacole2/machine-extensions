@@ -1,0 +1,22 @@
+{
+    "extensions": [
+        {
+            "generic": {
+                "envs": {},
+                "copy": {
+                    "/Users/kcoleman/Desktop/rexconfig.yaml": "~/.rexray/config.yaml"
+                },
+                "run": [
+                    "curl -sSL https://dl.bintray.com/emccode/rexray/install-latest | sh",
+                    "sudo service rexray start"
+                ],
+                "validOS": [
+                    "ubuntu",
+                    "debian",
+                    "centos",
+                    "redhat"
+                ]
+            }
+        }
+    ]
+}

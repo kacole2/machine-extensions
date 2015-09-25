@@ -1,0 +1,33 @@
+{
+    "extensions": [
+        {
+            "extension-name": {
+                "version": "latest",
+                "envs": {
+                    "any environment": "variables"
+                },
+                "params": {
+                    "specific key values": "for extension customization"
+                },
+                "copy": {
+                    "source path/file": "destination path/file"
+                },
+                "files": {
+                    "filename for extension customization": {
+                        "source": "source path/file",
+                        "destination": "destination path/file"
+                    }
+                },
+                "run": [
+                    "commands",
+                    "to",
+                    "run"
+                ],
+                "validOS": [
+                    "OSnames",
+                    "ubuntu"
+                ]
+            }
+        }
+    ]
+}

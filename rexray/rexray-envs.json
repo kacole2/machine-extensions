@@ -1,0 +1,13 @@
+{
+    "extensions": [
+        {
+            "rexray": {
+                "version": "latest",
+                "envs": {
+                    "AWS_ACCESS_KEY": "mykey",
+                    "AWS_SECRET_KEY": "mysecretkey"
+                }
+            }
+        }
+    ]
+}
