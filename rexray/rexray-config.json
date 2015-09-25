@@ -5,8 +5,8 @@
                 "version": "latest",
                 "files": {
                     "config.yaml": {
-                        "source": "/Users/kcoleman/Desktop/rexconfig.yaml",
-                        "destination": "~/.rexray/config.yaml"
+                        "source": "/Users/kcoleman/Desktop/rexconfig.yml",
+                        "destination": "/etc/rexray/config.yml"
                     }
                 }
             }

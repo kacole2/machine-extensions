@@ -71,7 +71,7 @@ A generic installation of a service using only commands lines:
             "generic": {
                 "envs": {},
                 "copy": {
-                    "/Users/kcoleman/Desktop/rexconfig.yaml": "~/.rexray/config.yaml"
+                    "/Users/kcoleman/Desktop/rexconfig.yml": "/etc/rexray/config.yml"
                 },
                 "run": [
                     "curl -sSL https://dl.bintray.com/emccode/rexray/install | sh",
@@ -123,7 +123,7 @@ a more complex example with extensions running in priority:
         {
             "generic": {
                 "copy": {
-                    "/Users/kcoleman/Desktop/rexconfig.yaml": "/etc/rexray/config_backup1.yaml"
+                    "/Users/kcoleman/Desktop/rexconfig.yml": "/etc/rexray/config_backup1.yml"
                 }
             }
         },
@@ -135,8 +135,8 @@ a more complex example with extensions running in priority:
                 "version": "latest",
                 "files": {
                     "config.yaml": {
-                        "source": "/Users/kcoleman/Desktop/rexconfig.yaml",
-                        "destination": "/etc/rexray/config.yaml"
+                        "source": "/Users/kcoleman/Desktop/rexconfig.yml",
+                        "destination": "/etc/rexray/config.yml"
                     }
                 }
             }
@@ -144,7 +144,7 @@ a more complex example with extensions running in priority:
         {
             "generic": {
                 "copy": {
-                    "/Users/kcoleman/Desktop/rexconfig2.yaml": "/etc/rexray/config_backup3.yaml"
+                    "/Users/kcoleman/Desktop/rexconfig2.yml": "/etc/rexray/config_backup3.yml"
                 }
             }
         }

@@ -4,7 +4,7 @@
             "generic": {
                 "envs": {},
                 "copy": {
-                    "/Users/kcoleman/Desktop/rexconfig.yaml": "~/.rexray/config.yaml"
+                    "/Users/kcoleman/Desktop/rexconfig.yml": "/etc/rexray/config.yml"
                 },
                 "run": [
                     "curl -sSL https://dl.bintray.com/emccode/rexray/install-latest | sh",
