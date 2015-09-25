@@ -13,6 +13,10 @@ Get the code: [kacole2/machine/tree/feature/extension](https://github.com/kacole
   - [Weave](https://github.com/weaveworks/weave) : stable
   - Generic - install services through a JSON file without customization
 
+Examples of each are in the folders on this repo.
+
+Please contribute by creating `.json` files for anything that you want to install. Things like Nagios, NTP Settings, Security Templates, Agents for Chef, Puppet, or Mesos, etc!
+
 ### Summary
 Extensions for Docker Machine is a pluggable architecture to install Docker Engine Plugins as an additional command line argument.
 
