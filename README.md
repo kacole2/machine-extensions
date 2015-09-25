@@ -1,7 +1,7 @@
 # Extensions for Docker Machine
 
 ### Premise
-Docker Machine gets you a "docker ready" host, but what about everything else that integrates with Docker Engine? Docker Engine 1.8 released the pluggable architecture for 3rd party network and storage extensions. However, most of these require installation processes that must be done after the host is provisioned. The Docker Machine Extensibility feature is an interface for specifying the installation of Docker Engine Plugins to install during the host deployment.
+Docker Machine gets you a "docker ready" host. It automatically configures the host OS to run Docker containers and can be joined to a Swarm cluster. But what about everything else that goes into daily operations? Configuration management, Docker Engine pluggable extensions, crazy security configurations, etc! Those are the things that can push Docker Machine that extra mile. Docker Machine with Extensions gives you the flexibility to configure your host, your way.
 
 Closed [PR #1881](https://github.com/docker/machine/pull/1881) is to address [Proposal / Issue #1765](https://github.com/docker/machine/issues/1765). The discussion will continue on [Issue #773 - Proposal: Machine Declaration](https://github.com/docker/machine/issues/773).
 
