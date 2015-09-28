@@ -1,0 +1,9 @@
+StorageDrivers:
+  - scaleio
+ScaleIoInsecure: true
+ScaleIoEndpoint: https://gw-ip/api
+ScaleIoUserName: admin
+ScaleIoPassword: Scaleio123
+ScaleIoSystemName: cluster1
+ScaleIoProtectionDomainName: protection_domain1
+ScaleIoStoragePoolName: capacity
