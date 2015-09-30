@@ -1,0 +1,31 @@
+{
+    "extensions": [
+        {
+            "generic": {
+                "envs": {
+                    "MDM_IP": "mdmip1,mdmip2"
+                },
+                "run": [
+                    "sudo yum -ytq install wget libaio numactl",
+                    "sudo MDM_IP=mdmip1,mdmip2 rpm -ivvh https://scaleio-source.s3.amazonaws.com/1.32/EMC-ScaleIO-sdc-1.32-403.2.el7.x86_64.rpm"
+                ],
+                "validOS": [
+                    "centos",
+                    "rhel",
+                    "fedora"
+                ]
+            }
+        },
+        {
+            "rexray": {
+                "version": "latest",
+                "files": {
+                    "config.yaml": {
+                        "source": "/Users/clintonkitson/go/src/github.com/docker/machine/config.yml-sio",
+                        "destination": "/etc/rexray/config.yml"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+docker-machine create --driver=amazonec2 \
+  --amazonec2-access-key=blah \
+  --amazonec2-secret-key=blah \
+  --amazonec2-region=us-west-1 \
+  --amazonec2-zone=c \
+  --amazonec2-subnet-id=subnet-47f73a22 \
+  --amazonec2-ami=ami-25689261 \
+  --amazonec2-ssh-user=centos \
+  --amazonec2-root-size=20 \
+  --extension=rex_sio_sdc.json \
+  testt26

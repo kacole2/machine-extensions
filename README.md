@@ -9,9 +9,14 @@ Download the binaries: [kacole2/machine/releases/tag/v0.4.1-ext](https://github.
 Get the code: [kacole2/machine/tree/feature/extension](https://github.com/kacole2/machine/tree/feature/extension)
 
 ### Extensions Supported:
-  - [REXray](https://github.com/emccode/rexray) : stable
+  - [REX-Ray](https://github.com/emccode/rexray) : stable
   - [Weave](https://github.com/weaveworks/weave) : stable
-  - Generic - install services through a JSON file without customization
+
+### Generic Extensions
+The [Generic Extension](generic/) capability allows the install any services and customize through a JSON file
+  - [rexray](generic/rexray.json) - REX-Ray by itself
+  - [rexray_sio_sdc](generic/rexray_sio_sdc) - REX-Ray with a ScaleIO Client
+
 
 Examples of each are in the folders on this repo.
 
@@ -102,7 +107,7 @@ A simple example of installing a service (Weave as an example):
 ```
 
 ```
-//weave-node-02 
+//weave-node-02
 {
     "extensions": [
         {
@@ -153,11 +158,11 @@ a more complex example with extensions running in priority:
 ```
 
 ### Deeper Dive
-The `.json` file is read from a local resource into memory. 
+The `.json` file is read from a local resource into memory.
 
 The name of the extension is checked to see if a registered extension exists. If there is a matching registered extension, the paramters in the `.json` file are passed on.
   - `version` will set the value from `nil` to a `string` in the `extInfo` struct. If it's not specified and the value `nil` is passed along, the extension's `.go` file will have a default or `latest` version specified. Versioning allows consistent deployment of the extension in the case that a specific `docker-engine` version is being specified in the docker machine command. Each extension is responsible for the implementation of installing different versions.
-  - `env` is a set of key:value pairs that can call the `utils.go` function `appendEnvFile` to set environment variables on the host. 
+  - `env` is a set of key:value pairs that can call the `utils.go` function `appendEnvFile` to set environment variables on the host.
   - `params` is any set of key:value pairs that an extension can use for customization. These pairs are passed on to the extension's interface where the extension can use them any way it wishes. Such use cases include commands to run or local variables for configuration.
   - `copy` is a key:value pair that will take the source and destination and transfer the files using `docker-machine scp`. This takes no priority and files can be transferred at will when called.
   - `files` is a nested set of key:value pairs for the transfering of files using the `docker-machine scp` command. This function is used for customizing extensions. The name specified in the `.json` file must match in the function called. This allows you to transfer files at any time in your code. This gives you the freedom and flexibiltiy to transfer files when a function may need them. Files can be transferred from the local system to remote systems or between remote systems. Use cases include configuration files or binaries to be copied. There is a generic function in `utils.go` that will take the `source` and `destination` keys to transfer files.
@@ -181,4 +186,3 @@ if h.HostOptions.ExtensionOptions.File != "" {
       }
     }
 ```
-
