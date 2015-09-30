@@ -1,0 +1,32 @@
+{
+    "extensions": [
+        {
+            "rexray": {
+                "version": "latest",
+                "files": {
+                    "config.yaml": {
+                        "source": "/Users/kcoleman/Desktop/rexconfig.yml",
+                        "destination": "/etc/rexray/config.yml"
+                    }
+                }
+            }
+        },
+        {
+            "generic": {
+                "run": [
+                    "rexray volume create --size=20 --volumename=wpdata",
+                    "rexray volume create --size=20 --iops=300 --volumetype=ssd --volumename=mysqldata",
+                    "sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.4.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'",
+                    "sudo chmod +x /usr/local/bin/docker-compose",
+                    "mkdir /home/ubuntu/wordpress-compose",
+                    "curl -L https://raw.githubusercontent.com/kacole2/wordpress-compose/master/docker-compose.yml > /home/ubuntu/wordpress-compose/docker-compose.yml",
+                    "sudo docker-compose -f /home/ubuntu/wordpress-compose/docker-compose.yml up -d"
+                ],
+                "validOS": [
+                    "ubuntu",
+                    "debian"
+                ]
+            }
+        }
+    ]
+}
